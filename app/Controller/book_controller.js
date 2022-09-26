@@ -5,7 +5,7 @@ const http_formatter = require('../Util/http_formatter');           //Imported H
 const createBook = async (request, response) => {
     try {
         const user = await Book.create(request.body);
-        return response.status(200).json(http_formatter(user, "User Created Sucessfully"))
+        return response.status(200).json(http_formatter(user, "User Created Successfully"))
     } catch (error) {
         console.log(error)
         return response.status(400).json(http_formatter(error, "Something Went Wrong", false))
@@ -17,7 +17,7 @@ const getBook = async (request, response) => {
     try {
         const { pageNo, perPage } = request.query;
         const user = await Book.find({});
-        return response.status(200).json(http_formatter(user, "User Fetched Sucessfully"))
+        return response.status(200).json(http_formatter(user, "User Fetched Successfully"))
     } catch (error) {
         console.log(error)
         return response.status(400).json(http_formatter(error, "Something Went Wrong", false))
